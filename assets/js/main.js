@@ -53,10 +53,12 @@
     function renderVideos(target, list) {
         var el = document.getElementById(target);
         if (!el) return;
-        el.innerHTML = list.map(videoCard).join('') + (el.dataset.append ? document.getElementById(el.dataset.append).innerHTML : '');
+        el.innerHTML = list.map(videoCard).join('') + (el.dataset.append && !videos.some(function (v) { return v.replacesSoon; }) ? document.getElementById(el.dataset.append).innerHTML : '');
     }
 
-    var videos = HY.VIDEOS || [];
+    // Videos with a "from" date stay hidden until they go public on YouTube
+    var now = Date.now();
+    var videos = (HY.VIDEOS || []).filter(function (v) { return !v.from || Date.parse(v.from) <= now; });
     renderVideos('long-videos', videos.filter(function (v) { return v.type === 'long'; }));
     renderVideos('short-videos', videos.filter(function (v) { return v.type === 'short'; }));
     var featured = document.getElementById('featured-shorts');
