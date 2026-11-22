@@ -67,7 +67,7 @@ img { max-width: 100%; height: auto; display: block; }
 .site-nav.scrolled { box-shadow: var(--shadow-sm); border-color: var(--line); }
 .nav-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .brand { display: flex; align-items: center; gap: 10px; font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 700; color: var(--plum-deep); white-space: nowrap; }
-.brand svg { width: 34px; height: 34px; flex-shrink: 0; }
+.brand svg, .brand img { width: 44px; height: 44px; flex-shrink: 0; }
 .nav-menu { display: flex; align-items: center; gap: 1.7rem; list-style: none; }
 .nav-menu a { font-weight: 700; font-size: .95rem; color: var(--ink-soft); padding: 6px 0; position: relative; }
 .nav-menu a::after { content: ''; position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--rose); transition: width .25s; }
@@ -268,3 +268,13 @@ a.card:hover .card-link i { transform: translateX(4px); }
     .video-body h3 { font-size: .9rem; }
     .video-play span { width: 52px; height: 52px; }
 }
+
+/* Logo + legal pages */
+.footer-logo { width: 64px; height: 64px; margin-bottom: 14px; }
+.links-card .avatar.logo { object-fit: cover; background: #faf6f1; }
+.footer-bottom a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.legal { max-width: 760px; }
+.legal h2 { font-size: 1.7rem; margin: 36px 0 10px; }
+.legal p { margin: 0 0 12px; }
+.legal a { color: var(--plum); font-weight: 700; text-decoration: underline; }
+.legal-updated { font-size: .9rem; color: var(--muted, #776); }

@@ -37,7 +37,7 @@ def head(page, title, desc, image='assets/img/hero.webp', extra=''):
     <meta property="og:url" content="{url}">
     <meta property="og:image" content="{BASE}{image}">
     <meta name="twitter:card" content="summary_large_image">
-    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/img/logo-badge.svg" type="image/svg+xml">
     {FONTS}{extra}
 </head>'''
 
@@ -52,7 +52,7 @@ def nav(active):
     <a class="sr-only" href="#main">Skip to content</a>
     <nav class="site-nav" aria-label="Main">
         <div class="container nav-inner">
-            <a class="brand" href="index.html">{LOTUS} The Hormonal Yogini</a>
+            <a class="brand" href="index.html"><img src="assets/img/logo-mark.svg" alt="" width="44" height="44"> The Hormonal Yogini</a>
             <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
             <ul class="nav-menu" id="nav-menu">
                 {chr(10).join('                ' + i for i in items).strip()}
@@ -88,6 +88,7 @@ def footer():
         <div class="container">
             <div class="footer-grid">
                 <div>
+                    <img class="footer-logo" src="assets/img/logo-badge.svg" alt="" width="64" height="64" loading="lazy">
                     <h3>The Hormonal Yogini</h3>
                     <p>Gentle yoga, nourishing food and simple hormone education for women and mums, by Yogeeta Sharma in Brighton, UK.</p>
                     <div class="footer-social">
@@ -103,6 +104,8 @@ def footer():
                         <li><a href="recipes.html">Hormone-friendly recipes</a></li>
                         <li><a href="learn.html">Hormone guides</a></li>
                         <li><a href="links.html">All links</a></li>
+                        <li><a href="privacy.html">Privacy policy</a></li>
+                        <li><a href="terms.html">Terms of use</a></li>
                     </ul>
                 </div>
                 <div>
@@ -116,7 +119,7 @@ def footer():
             </div>
             <div class="footer-bottom">
                 <p>&copy; <span data-year>2026</span> Yogeeta Sharma · The Hormonal Yogini</p>
-                <p>Wellbeing content, not medical advice.</p>
+                <p><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · Wellbeing content, not medical advice.</p>
             </div>
         </div>
     </footer>
@@ -159,7 +162,7 @@ home = f'''
                     </div>
                 </div>
                 <div class="hero-photo">
-                    <img src="assets/img/hero.webp" alt="Yogeeta in a supported garland squat with hands in prayer" width="520" height="496">
+                    <img src="assets/img/hero.webp" alt="Yogeeta in wheel pose on a yoga mat in a sunny park" width="400" height="440">
                     <a class="hero-badge" href="{YT_SUB}" target="_blank" rel="noopener">
                         <i class="fab fa-youtube" aria-hidden="true"></i>
                         <div><strong>4,000+</strong><span>women practising on YouTube</span></div>
@@ -387,12 +390,60 @@ page('learn.html', 'Hormone Health Guides: Cycle, Cramps, Cortisol & Postpartum 
      'Simple guides to the four phases of your menstrual cycle, easing period cramps naturally, lowering stress and cortisol, and gentle postpartum recovery.',
      learn)
 
+
+# ---------------------------------------------------------------- LEGAL
+UPDATED = '22 November 2026'
+
+def legal_page(fname, title, desc, heading, intro, sections):
+    body = f"""
+        <section class="page-hero">
+            <div class="container">
+                <p class="eyebrow">The Hormonal Yogini</p>
+                <h1>{heading}</h1>
+                <p>{intro}</p>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container legal">
+                <p class="legal-updated">Last updated: {UPDATED}</p>
+""" + ''.join(f'                <h2>{h}</h2>\n' + ''.join(f'                <p>{t}</p>\n' for t in ps) for h, ps in sections) + """            </div>
+        </section>"""
+    page(fname, title, desc, body)
+
+legal_page('privacy.html', 'Privacy Policy | The Hormonal Yogini',
+    'How The Hormonal Yogini website handles your information: no accounts, no tracking cookies and no analytics.',
+    'Privacy policy', 'The short version: this site does not ask for your details, does not use tracking cookies and does not run analytics.', [
+    ('Who we are', [f'The Hormonal Yogini is run by Yogeeta Sharma in Brighton, UK. "We", "us" and "our" in this policy mean Yogeeta Sharma. You can contact us by direct message on <a href="{IG}" target="_blank" rel="noopener">Instagram @thehormonalyogini</a>.']),
+    ('Information we collect', ['We do not ask you to create an account, sign up or fill in any forms on this website, and we do not collect your name, email address or any other personal details through it.', 'If you message us on Instagram, YouTube or another platform, we see what you choose to share there. We use it only to reply to you, and that platform\'s own privacy policy also applies.']),
+    ('Cookies and analytics', ['This website does not set its own cookies and does not use analytics, advertising or tracking tools.']),
+    ('Services that load on this site', ['To work, the site uses a few third-party services. When your browser loads a page, these services may receive technical information such as your IP address and browser type:',
+        '<strong>GitHub Pages</strong> hosts the website and may keep short-term server logs for security. <strong>Google Fonts</strong> and <strong>cdnjs (Cloudflare)</strong> provide the fonts and icons. <strong>YouTube</strong> provides the video thumbnails. A video player only loads when you press play, and it uses YouTube\'s privacy-enhanced mode (youtube-nocookie.com). Once you play a video, YouTube\'s privacy policy applies.']),
+    ('Links to other sites', ['The site links to YouTube, Instagram and other websites. We are not responsible for how those sites handle your information, so please read their privacy policies.']),
+    ('Your rights', ['Under UK data protection law (UK GDPR) you have rights over your personal data, including the right to ask what we hold about you and to ask us to delete it. As this website does not collect personal data, there is normally nothing for us to give or delete. If you have a question or concern, contact us on Instagram. You can also complain to the Information Commissioner\'s Office (ico.org.uk).']),
+    ('Children', ['This site is meant for adults and is not directed at children under 13.']),
+    ('Changes to this policy', ['If we change how the site works, for example by adding a newsletter, we will update this page and the date above.']),
+])
+
+legal_page('terms.html', 'Terms of Use | The Hormonal Yogini',
+    'Terms of use for The Hormonal Yogini website, including the health disclaimer for the yoga, recipes and hormone guides.',
+    'Terms of use', 'Please read these terms, especially the health disclaimer, before you practise along with the videos or try the recipes.', [
+    ('About these terms', ['By using this website you agree to these terms. The site is run by Yogeeta Sharma, trading as The Hormonal Yogini, in Brighton, UK. If you do not agree, please do not use the site.']),
+    ('Not medical advice', ['Everything on this site, including the yoga videos, recipes and hormone guides, is for general wellbeing and education only. It is not medical advice and does not replace advice from your GP, midwife, physiotherapist or another qualified health professional.', 'Please speak to a health professional before starting any new exercise or diet routine, especially if you are pregnant, postpartum, recovering from an injury or surgery, or have a health condition. Never ignore medical advice or delay getting it because of something you read or watched here. If your period pain is severe or unusual, please see a doctor.']),
+    ('Practise safely', ['Yoga involves physical movement. Listen to your body, move within a comfortable range, use props when you need them and stop if anything hurts or you feel dizzy or unwell. You practise at your own risk.']),
+    ('Recipes and food', ['Check every ingredient for allergies and intolerances before you cook. Recipes are general suggestions, not a personalised diet plan, and the benefits described are general information rather than promised results.']),
+    ('Our content', ['Unless stated otherwise, the text, photos, videos and logo on this site belong to Yogeeta Sharma. You are welcome to share links to any page. Please do not copy, republish or sell our content without written permission.']),
+    ('Links and third-party services', ['The site links to and embeds content from other services, such as YouTube and Instagram. Their own terms apply, and we are not responsible for their content or availability.']),
+    ('Our liability', ['We work hard to keep the content accurate and helpful, but we cannot promise it is complete, current or right for your situation. As far as the law allows, we are not liable for any loss, injury or damage that comes from using this site or practising along with it. Nothing in these terms limits liability that cannot be limited by law, such as for death or personal injury caused by negligence.']),
+    ('Changes', ['We may update these terms from time to time. The date above shows when they last changed.']),
+    ('Law', ['These terms are governed by the law of England and Wales, and the courts of England and Wales have jurisdiction.']),
+])
+
 # ---------------------------------------------------------------- LINKS (link-in-bio)
 links = head('links.html', 'Links | The Hormonal Yogini', 'All links for The Hormonal Yogini: YouTube, Instagram, free yoga classes, recipes and hormone guides.') + f'''
 <body>
     <main class="links-page" id="main">
         <div class="links-card">
-            <img class="avatar" src="assets/img/avatar.webp" alt="Yogeeta Sharma" width="160" height="160">
+            <img class="avatar logo" src="assets/img/logo-badge.svg" alt="The Hormonal Yogini logo" width="160" height="160">
             <h1>The Hormonal Yogini</h1>
             <p>Gentle yoga &amp; hormone health for women and mums · by Yogeeta Sharma</p>
             <a class="link-btn featured" href="{YT_SUB}" target="_blank" rel="noopener"><i class="fab fa-youtube" aria-hidden="true"></i><div>Subscribe on YouTube<small>Full classes &amp; Shorts</small></div><span class="arrow"><i class="fas fa-arrow-up-right-from-square"></i></span></a>
@@ -415,6 +466,7 @@ nf = head('404.html', 'Page not found | The Hormonal Yogini', 'This page could n
 <body>
     <main class="links-page" id="main">
         <div class="links-card">
+            <img class="avatar logo" src="assets/img/logo-badge.svg" alt="The Hormonal Yogini logo" width="160" height="160">
             <h1>Take a deep breath…</h1>
             <p>This page doesn't exist, but your next practice does.</p>
             <a class="link-btn featured" href="/hormonal-yogini/"><i class="fas fa-house" aria-hidden="true"></i><div>Back to the homepage</div><span class="arrow"><i class="fas fa-arrow-right"></i></span></a>
@@ -425,9 +477,8 @@ nf = head('404.html', 'Page not found | The Hormonal Yogini', 'This page could n
 '''
 (OUT / '404.html').write_text(nf, encoding='utf-8')
 
-(OUT / 'assets/img/favicon.svg').write_text(LOTUS.replace('aria-hidden="true"', 'xmlns="http://www.w3.org/2000/svg"'), encoding='utf-8')
 (OUT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {BASE}sitemap.xml\n')
-urls = ''.join(f'  <url><loc>{BASE}{p}</loc></url>\n' for p in ['', 'yoga.html', 'recipes.html', 'learn.html', 'links.html'])
+urls = ''.join(f'  <url><loc>{BASE}{p}</loc></url>\n' for p in ['', 'yoga.html', 'recipes.html', 'learn.html', 'links.html', 'privacy.html', 'terms.html'])
 (OUT / 'sitemap.xml').write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
 (OUT / '.nojekyll').write_text('')
 print('built')
