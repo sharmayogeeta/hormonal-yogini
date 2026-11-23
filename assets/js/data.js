@@ -30,10 +30,10 @@ HY.VIDEOS = [
 
     // ---- Shorts ----
     { id: 'Op1uIjMwc4k', type: 'short', cat: 'hormones', title: '4 yoga poses for period cramps', from: '2026-11-23T12:00:00Z' },
-    { id: '_XJ6gSx2OeI', type: 'short', cat: 'hormones', title: '18 poses for period cramps in 30 seconds', from: '2026-11-24T12:00:00Z' },
-    { id: 'r79zpXo9PoQ', type: 'short', cat: 'hormones', title: 'Legs up the wall for period cramps', from: '2026-11-25T12:00:00Z' },
-    { id: 'aMtSH6sDYWE', type: 'short', cat: 'calm',     title: '5 poses to help lower stress and cortisol', from: '2026-11-26T12:00:00Z' },
-    { id: 'X57skjgFt3Q', type: 'short', cat: 'everyday', title: 'Doing yoga with a toddler at home', from: '2026-11-27T12:00:00Z' },
+    { id: '_XJ6gSx2OeI', type: 'short', cat: 'hormones', title: '18 poses for period cramps in 30 seconds', from: '2099-01-01T00:00:00Z' },
+    { id: 'r79zpXo9PoQ', type: 'short', cat: 'hormones', title: 'Legs up the wall for period cramps', from: '2099-01-01T00:00:00Z' },
+    { id: 'aMtSH6sDYWE', type: 'short', cat: 'calm',     title: '5 poses to help lower stress and cortisol', from: '2099-01-01T00:00:00Z' },
+    { id: 'X57skjgFt3Q', type: 'short', cat: 'everyday', title: 'Doing yoga with a toddler at home', from: '2099-01-01T00:00:00Z' },
     { id: 'bHVmZ7n9TSI', type: 'short', cat: 'hormones', title: 'Hormonal balance yoga' },
     { id: 'BQ9oVb43M58', type: 'short', cat: 'hormones', title: 'Take care of your hormones' },
     { id: 'C4Cfqkc1QvA', type: 'short', cat: 'hormones', title: 'Yoga for back and thyroid' },
