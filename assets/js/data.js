@@ -22,7 +22,7 @@ HY.LINKS = {
 HY.VIDEOS = [
     // ---- Full classes ----
     { id: 'H8_thp1Kt50', type: 'long',  cat: 'hormones', title: '20-Minute Yoga for Period Cramps: Gentle Relief at Home', length: '20:02',
-      text: '18 soothing poses to ease cramps, lower back ache and bloating. Suitable for all levels.', from: '2026-11-23T09:00:00Z', replacesSoon: true },
+      text: '18 soothing poses to ease cramps, lower back ache and bloating. Suitable for all levels.', from: '2099-01-01T00:00:00Z', replacesSoon: true },
     { id: 'BhFDJNEQH_M', type: 'long',  cat: 'hormones', title: 'Yoga for Hormone Balance: 8 Gentle Poses for Women', length: '4:38',
       text: 'A slow outdoor flow to support your endocrine system, ease tension and help you feel more like yourself.' },
     { id: 'cY-Lb4bp_jg', type: 'long',  cat: 'calm',     title: '5-Minute Morning Yoga to Calm Your Nervous System (Toddler Approved)', length: '3:21',
@@ -30,11 +30,10 @@ HY.VIDEOS = [
 
     // ---- Shorts ----
     { id: 'Op1uIjMwc4k', type: 'short', cat: 'hormones', title: '4 yoga poses for period cramps', from: '2026-11-23T12:00:00Z' },
-    { id: '_XJ6gSx2OeI', type: 'short', cat: 'hormones', title: '18 poses for period cramps in 30 seconds', from: '2026-11-24T12:00:00Z' },
-    { id: 'r79zpXo9PoQ', type: 'short', cat: 'hormones', title: 'Legs up the wall for period cramps', from: '2026-11-25T12:00:00Z' },
-    { id: 'aMtSH6sDYWE', type: 'short', cat: 'calm',     title: '5 poses to help lower stress and cortisol', from: '2026-11-26T12:00:00Z' },
-    { id: 'X57skjgFt3Q', type: 'short', cat: 'everyday', title: 'Doing yoga with a toddler at home', from: '2026-11-27T12:00:00Z' },
-    { id: 'b_-EUnflIlY', type: 'short', cat: 'calm',     title: 'Bedtime rituals for better sleep', from: '2026-11-28T12:00:00Z' },
+    { id: '_XJ6gSx2OeI', type: 'short', cat: 'hormones', title: '18 poses for period cramps in 30 seconds', from: '2099-01-01T00:00:00Z' },
+    { id: 'r79zpXo9PoQ', type: 'short', cat: 'hormones', title: 'Legs up the wall for period cramps', from: '2099-01-01T00:00:00Z' },
+    { id: 'aMtSH6sDYWE', type: 'short', cat: 'calm',     title: '5 poses to help lower stress and cortisol', from: '2099-01-01T00:00:00Z' },
+    { id: 'X57skjgFt3Q', type: 'short', cat: 'everyday', title: 'Doing yoga with a toddler at home', from: '2099-01-01T00:00:00Z' },
     { id: 'bHVmZ7n9TSI', type: 'short', cat: 'hormones', title: 'Hormonal balance yoga' },
     { id: 'BQ9oVb43M58', type: 'short', cat: 'hormones', title: 'Take care of your hormones' },
     { id: 'C4Cfqkc1QvA', type: 'short', cat: 'hormones', title: 'Yoga for back and thyroid' },
